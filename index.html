@@ -4,30 +4,55 @@
     <meta charset="UTF-8">
     <title>python-telegram-bot Example WebApp</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <script type="text/javascript">
-    const colorPicker = new iro.ColorPicker('#picker', {
-        borderColor: "#ffffff",
-        borderWidth: 1,
-        width: Math.round(document.documentElement.clientWidth / 2),
-    });
-    colorPicker.on('color:change', function (color) {
-        document.body.style.background = color.hexString;
-    });
-
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
-        const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+        const data = JSON.stringify({address: document.querySelector("#address").value,
+                rooms: document.querySelector("#rooms").value,
+                district: document.querySelector("#district").value,
+                price: document.querySelector("#price").value,
+                pets: document.querySelector("#pets").value});
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
 </script>
 <body style="background-color: #ffffff">
-<div style="position: absolute; margin-top: 5vh; margin-left: 5vw; height: 90vh; width: 90vw; border-radius: 5vh; background-color: var(--tg-theme-bg-color); box-shadow: 0 0 2vw
- #000000;">
-    <div id="picker"
-         style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%"></div>
+<div class="mb-3">
+  <label for="rooms" class="form-label">Кількість кімнат: </label>
+  <input name="rooms" class="form-control" id="rooms" value="" type="number"/>
+</div>
+<div class="mb-3">
+  <label for="price" class="form-label">Ціна: </label>
+  <input name="price" class="form-control" id="price" value="" />
+</div>
+<div>
+    <label for="address">Адреса: </label>
+    <input name="address" class="form-control" id="address" value="", placeholder="проспект П. Тичини 11" />
+  </div>
+  <div>
+    <label for="district">Район</label>
+    <select class="form-select" name="district" id="district">
+        <option value="">--Виберіть район--</option>
+        <option value="Київський">Київський</option>
+        <option value="Індустріальний">Індустріальний</option>
+        <option value="Немишлянський">Немишлянський</option>
+        <option value="Новобоварський">Новобоварський</option>
+        <option value="Основянський">Основянський</option>
+        <option value="Салтівський">Салтівський</option>
+        <option value="Слобідський">Слобідський</option>
+        <option value="Холодногірський">Холодногірський</option>
+        <option value="Шевченківський">Шевченківський</option>
+    </select>
+  </div>
+  <div class="form-check">
+  <label class="form-check-label" for="pets">Чи можна з домашніми тваринами?</label>
+    <input class="form-check-input" type="checkbox" value="" id="pets" name="pets">
+  </div>
+<div>
+  <button type="button" class="btn btn-primary" onclick="createAd()">Створити оголошення</button>
 </div>
 </body>
 <script type="text/javascript">
