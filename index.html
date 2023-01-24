@@ -277,7 +277,7 @@
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
-        .onClick(function(){ createAd(); });
+        .onClick(function(){ createAd(); }, callback='url_click');
 
     Telegram.WebApp.onEvent('themeChanged', function() {
         document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
