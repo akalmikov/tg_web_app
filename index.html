@@ -13,8 +13,13 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+    }
+
     label {
-        display: flex;
+        display: contents;
         width: auto;
         font-size: x-large;
         color: rgb(122, 181, 212);
@@ -57,7 +62,7 @@
 </script>
 
 <body style="background-color: #18222c">
-    <div class="p-3 pt-5">
+    <div class="p-3 pt-5 col-md-5">
         <label for="rooms" class="form-label">* Кількість кімнат: </label>
         <select name="rooms" class="form-select form-select-lg" id="rooms" value="" required>
             <option value="">--Виберіть кількість кімнат--</option>
@@ -68,17 +73,17 @@
             <option value="5">5+</option>
         </select>
     </div>
-    <div class="p-3">
+    <div class="p-3 col-md-5">
         <label for="price" class="form-label">* Ціна: </label>
         <input name="price" class="form-control form-control-lg" id="price" value="" type="number" min="0" step="1"
             data-bind="value:price" required />
     </div>
-    <div class="p-3">
+    <div class="p-3 col-md-5">
         <label for="address" class="form-label">* Адреса: </label>
         <input name="address" class="form-control form-control-lg" id="address" value="" ,
             placeholder="проспект П. Тичини 11" required />
     </div>
-    <div class="p-3">
+    <div class="p-3 col-md-5">
         <label for="district" class="form-label">* Район:</label>
         <select class="form-select form-select-lg" name="district" id="district" required>
             <option value="">--Виберіть район--</option>
@@ -93,16 +98,16 @@
             <option value="Шевченківський">Шевченківський</option>
         </select>
     </div>
-    <div class="form-check form-switch mt-5" style="padding-left: 0em">
-        <label class="form-check-label" for="pets">* Можна з тваринами:</label>
+    <div id="pets_div" class="form-check form-switch mt-5" style="padding-left: 0em">
+        <label class="form-check-label" style="display: flex; width: auto; font-size: x-large; color: rgb(122, 181, 212); float: left; width: calc(100%/3.5);
+        padding-left: 0.6em" for="pets">* Можна з тваринами:</label>
         <input class="form-check-input mt-2" type="checkbox" role="switch" id="pets" required>
     </div>
-    
-    <div class="mb-3 mt-5">
+
+    <div class="p-3 mt-5 col-md-5">
         <label for="formFileMultiple" class="form-label">* Обрати фото:</label>
         <input class="form-control" type="file" id="formFileMultiple" multiple>
     </div>
-
 </body>
 <script type="text/javascript">
     Telegram.WebApp.expand();
