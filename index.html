@@ -284,21 +284,7 @@
     });
 
     function createAd() {
-        $.ajax({
-            url: "http://193.38.54.125:9000/create",
-            type: "POST",
-            data: {
-                address: document.querySelector("#address").value,
-                rooms: document.querySelector("#rooms").value,
-                district: document.querySelector("#district").value,
-                price: document.querySelector("#price").value,
-                pets: document.querySelector("#pets").value,
-            },
-            timeout: 1000,
-            success: function (response) {
-                console.log("Дякую, Ваш заказ прийнятий в обробку, чекайте на дзвінок.");
-            }
-        });
+        Telegram.WebApp.sendData('123');
     }
     function toggleMainButton(el) {
         const mainButton = Telegram.WebApp.MainButton;
