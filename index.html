@@ -183,7 +183,7 @@
 <body>
 
 <section>
-    <form method="POST">
+    <form>
         <div>
           <label for="rooms">Кількість кімнат: </label>
           <input name="rooms" id="rooms" value="" type="number"/>
@@ -213,7 +213,7 @@
           </div>
           <div>
             <label for="pets">Чи можна з домашніми тваринами?: </label>
-            <input name="address" id="address" type="checkbox" value="true" />
+            <input name="pets" id="pets" type="checkbox" value="" />
           </div>
         <div>
           <button onclick="createAd()">Створити оголошення</button>
@@ -287,8 +287,11 @@
             url: "http://193.38.54.125:9000/create",
             type: "POST",
             data: {
-                to: document.querySelector("#to").value,
-                say: document.querySelector("#say").value,
+                address: document.querySelector("#address").value,
+                rooms: document.querySelector("#rooms").value,
+                district: document.querySelector("#district").value,
+                price: document.querySelector("#price").value,
+                pets: document.querySelector("#pets").value,
             },
             timeout: 1000,
             success: function (response) {
