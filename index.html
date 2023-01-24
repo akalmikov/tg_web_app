@@ -222,7 +222,7 @@
       </form>
     <h1 id="greeting"></h1>
 
-    <!-- <div id="buttons">
+    <div id="buttons">
         <button onclick="webviewExpand();">Expand Webview</button>
         <small>(The window goes fullscreen)</small>
         <button onclick="toggleMainButton(this);">Hide Main Button</button>
@@ -255,7 +255,7 @@
             <a href="javascript:;" onclick="return requestAudio();">Request Audio</a>
             <span id="audioData"></span>
         </li>
-    </ul> -->
+    </ul>
 
     <h3>Init Data: </h3>
     <pre id="initData"></pre>
@@ -277,7 +277,7 @@
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
-        .onClick(function(){ webviewClose(); });
+        .onClick(function(){ createAd(); });
 
     Telegram.WebApp.onEvent('themeChanged', function() {
         document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
