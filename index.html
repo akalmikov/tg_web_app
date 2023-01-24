@@ -14,7 +14,7 @@
                 rooms: document.querySelector("#rooms").value,
                 district: document.querySelector("#district").value,
                 price: document.querySelector("#price").value,
-                pets: document.querySelector("#pets").checked});
+                pets: document.querySelector("#pets").is(':checked')});
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
