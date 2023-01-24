@@ -11,7 +11,7 @@
     label {
         display: flex;
         width: auto;
-        font-size: medium;
+        font-size: x-large;
         color: rgb(122, 181, 212);
     }
 </style>
@@ -30,7 +30,7 @@
 <body style="background-color: #18222c">
 <div class="mb-3">
   <label for="rooms" class="form-label">* Кількість кімнат: </label>
-  <select name="rooms" class="form-select" id="rooms" value="" required>
+  <select name="rooms" class="form-select form-select-lg" id="rooms" value="" required>
     <option value="">--Виберіть кількість кімнат--</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -41,15 +41,15 @@
 </div>
 <div class="mb-3">
   <label for="price" class="form-label">* Ціна: </label>
-  <input name="price" class="form-control" id="price" value="" type="number" required/>
+  <input name="price" class="form-control form-control-lg" id="price" value="" type="number" required/>
 </div>
 <div class="mb-3">
     <label for="address" class="form-label">* Адреса: </label>
-    <input name="address" class="form-control" id="address" value="", placeholder="проспект П. Тичини 11" required/>
-  </div>
-  <div class="mb-3">
+    <input name="address" class="form-control form-control-lg" id="address" value="", placeholder="проспект П. Тичини 11" required/>
+</div>
+<div class="mb-3">
     <label for="district" class="form-label">* Район</label>
-    <select class="form-select" name="district" id="district" required>
+    <select class="form-select form-select-lg" name="district" id="district" required>
         <option value="">--Виберіть район--</option>
         <option value="Київський">Київський</option>
         <option value="Індустріальний">Індустріальний</option>
@@ -61,11 +61,11 @@
         <option value="Холодногірський">Холодногірський</option>
         <option value="Шевченківський">Шевченківський</option>
     </select>
-  </div>
-  <div class="form-check">
-  <label class="form-check-label" for="pets">* Чи можна з домашніми тваринами?</label>
-    <input class="form-check-input" type="checkbox" value="" id="pets" name="pets" required>
-  </div>
+</div>
+<div class="form-check ml-3">
+    <label class="form-check-label" for="pets">* Чи можна з домашніми тваринами?</label>
+    <input class="form-check-input form-control-lg" type="checkbox" value="" id="pets" name="pets" required>
+</div>
 </body>
 <script type="text/javascript">
     Telegram.WebApp.expand();
